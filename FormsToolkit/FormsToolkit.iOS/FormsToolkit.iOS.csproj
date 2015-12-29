@@ -32,7 +32,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <DocumentationFile>bin\iPhone\Release\Toolkit.FormsPlugin.iOSUnified.XML</DocumentationFile>
+    <DocumentationFile>bin\iPhone\Release\FormsToolkit.iOS.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -46,7 +46,7 @@
     <Compile Include="Pages\NavigationPageNoLineRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Toolkit.FormsPlugin.Abstractions\FormsToolkit.csproj">
+    <ProjectReference Include="..\FormsToolkit\FormsToolkit.csproj">
       <Project>{14C534B6-1984-41A9-A384-D3A5508588E3}</Project>
       <Name>FormsToolkit</Name>
     </ProjectReference>

@@ -26,20 +26,19 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\FormsToolkit.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Toolkit.FormsPlugin.Abstractions.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\FormsToolkit.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controls\ListViewGrouped.cs" />
-    <Compile Include="Controls\TableViewEx.cs" />
     <Compile Include="Converters\BooleanToObjectConverter.cs" />
     <Compile Include="Converters\HexToColorConverter.cs" />
     <Compile Include="Converters\InvertedBooleanConverter.cs" />

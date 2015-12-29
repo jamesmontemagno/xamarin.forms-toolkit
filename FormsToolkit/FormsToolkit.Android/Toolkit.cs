@@ -1,25 +1,19 @@
 ﻿using System;
 
-namespace FormsToolkit.iOS
+namespace FormsToolkit.Droid
 {
     /// <summary>
-    /// Toolkit.
+    /// Static toolkit Initialization class
     /// </summary>
     public static class Toolkit
     {
         /// <summary>
-        /// Init this instance.
+        /// Init so nothing gets linked out
         /// </summary>
         public static void Init()
         {
-            StandardImageCellRenderer.Init();
-            StandardTextCellRenderer.Init();
-            StandardViewCellRenderer.Init();
-            EntryLineRenderer.Init();
-            ListViewGroupedRenderer.Init();
             EmailValidatorBehavior.Init();
             EmptyValidatorBehavior.Init();
-            NavigationPageNoLineRenderer.Init();
             BooleanToObjectConverter<string>.Init();
             HexToColorConverter.Init();
             InvertedBoolenConverter.Init();

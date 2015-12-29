@@ -29,13 +29,12 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>bin\Release\Toolkit.FormsPlugin.Android.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\FormsToolkit.Android.XML</DocumentationFile>
     <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <ItemGroup>
@@ -85,13 +84,14 @@
   <ItemGroup>
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Toolkit.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Toolkit.FormsPlugin.Abstractions\FormsToolkit.csproj">
+    <ProjectReference Include="..\FormsToolkit\FormsToolkit.csproj">
       <Project>{14C534B6-1984-41A9-A384-D3A5508588E3}</Project>
       <Name>FormsToolkit</Name>
     </ProjectReference>

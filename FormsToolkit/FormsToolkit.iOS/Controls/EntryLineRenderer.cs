@@ -12,12 +12,23 @@ using FormsToolkit.iOS;
 [assembly: ExportRenderer (typeof(EntryLine), typeof(EntryLineRenderer))]
 namespace FormsToolkit.iOS
 {
+    /// <summary>
+    /// Entry line renderer.
+    /// </summary>
     public class EntryLineRenderer : EntryRenderer
     {
+        /// <summary>
+        /// Init this instance.
+        /// </summary>
         public static void Init()
         {
-
+            var time = DateTime.UtcNow;
         }
+
+        /// <summary>
+        /// Raises the element changed event.
+        /// </summary>
+        /// <param name="e">E.</param>
         protected override void OnElementChanged (ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged (e);
@@ -34,6 +45,11 @@ namespace FormsToolkit.iOS
             }
         }
 
+        /// <summary>
+        /// Raises the element property changed event.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         protected override void OnElementPropertyChanged (object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged (sender, e);

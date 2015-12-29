@@ -3,8 +3,16 @@ using UIKit;
 
 namespace FormsToolkit.iOS
 {
+    /// <summary>
+    /// Cell helpers.
+    /// </summary>
     public static class CellHelpers
     {
+        /// <summary>
+        /// Sets the disclosure.
+        /// </summary>
+        /// <param name="cell">Cell.</param>
+        /// <param name="id">Identifier.</param>
         public static void SetDisclosure(this UITableViewCell cell, string id)
         {
             switch (id)
@@ -22,6 +30,7 @@ namespace FormsToolkit.iOS
                     cell.Accessory = UITableViewCellAccessory.DetailDisclosureButton;
                     break;
                 case "disclosure":
+                case "disclosure-indicator":
                     cell.Accessory = UITableViewCellAccessory.DisclosureIndicator;
                     break;
                 default:
