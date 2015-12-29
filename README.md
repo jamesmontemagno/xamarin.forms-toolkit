@@ -5,7 +5,7 @@ Toolkit for Xamarin.Forms (Controls, Behaviors, and Converters)!
 I created this repo for reference of a nice collection of controls, behaviors, and converters that could come in nifty for you when creating Xamarin.Forms applications. I plan on adding to this over time and eventually consuming it in a bunch of my applications and hope you will to.
 
 ## What's the plan and when can I have it?
-Great questions! Right now I haven't bundled it up at all because I am still working on it. You can grab some source code and bring it into your app if you so desire. 
+You can grab it from: https://www.nuget.org/packages/FormsToolkit
 
 ## Can I contribute?
 Sure! Ideally, I would love to bring in anything that is very small and light weight. No need to bring in tons of custom controls as those should be smaller NuGet packages. The goal here is to just create a library with small tweaks that are nifty.
