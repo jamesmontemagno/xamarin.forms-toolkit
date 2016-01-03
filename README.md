@@ -22,7 +22,6 @@ If you want to add something please create an issue and mark it with [Proposed] 
 * ListViewGrouped: It is a ListView, but on iOS it is of UITableViewStyle.Grouped, which looks very nice!
 
 ### Behaviors
-Namespace: **FormsToolkit.Behaviors**
 
 * EmailValidator: Checks to see if a string is a valid email address
 * EmptyValidator: Checks to see if a string is empty or null
