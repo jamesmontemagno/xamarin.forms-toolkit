@@ -90,12 +90,7 @@
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FormsToolkit\FormsToolkit.csproj">
-      <Project>{14C534B6-1984-41A9-A384-D3A5508588E3}</Project>
-      <Name>FormsToolkit</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <Import Project="..\FormsToolkit.Shared\FormsToolkit.Shared.projitems" Label="Shared" Condition="Exists('..\FormsToolkit.Shared\FormsToolkit.Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6490\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
@@ -113,5 +108,11 @@
   -->
   <ItemGroup>
     <Folder Include="Controls\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormsToolkit\FormsToolkit.csproj">
+      <Project>{14C534B6-1984-41A9-A384-D3A5508588E3}</Project>
+      <Name>FormsToolkit</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
