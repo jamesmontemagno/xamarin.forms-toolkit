@@ -38,7 +38,7 @@ Namespace: **FormsToolkit.Converters**
 ### Services
 Namespace: **FormsToolkit.Services**
 
-* MessagingService: Simplifies the MessagingService into having a singleton subscriber so you never have to worry. Also added a common question and alert class.
+* [MessagingService](https://github.com/jamesmontemagno/xamarin.forms-toolkit/wiki/Services#messagingservice): Simplifies the Messaging Center API into having a singleton subscriber so you never have to worry. Also, adds a common question and alert class that can be used across your project.
 
 
 ### License
