@@ -38,56 +38,8 @@ Namespace: **FormsToolkit.Converters**
 ### Services
 Namespace: **FormsToolkit.Services**
 
-* MessagingService: Simplivies the MessagingService into having a singleton subscriber so you never have to worry. Also added a common question and alert class.
-*
+* MessagingService: Simplifies the MessagingService into having a singleton subscriber so you never have to worry. Also added a common question and alert class.
 
-#### MessagingService
-Subscribe
-```csharp
-MessagingService.Current.Subscribe<MessagingServiceQuestion> ("question", async (arg1, arg2) => 
-{
-    var result = await DisplayAlert (arg2.Title, arg2.Question, arg2.Positive, arg2.Negative);
-
-    await DisplayAlert ("Result", result.ToString(), "OK");
-});
-
-MessagingService.Current.Subscribe<MessagingServiceAlert> ("alert", async (arg1, arg2) => 
-{
-   await DisplayAlert (arg2.Title, arg2.Message, arg2.Cancel);
-});
-
-MessagingService.Current.Subscribe ("message", async (e) => 
-{
-    await DisplayAlert ("Received", "Got message from Messaging Service", "OK");
-});
-```
-
-Unsubscribe:
-```csharp
-MessagingService.Current.Unsubscribe<MessagingServiceQuestion> ("question");
-MessagingService.Current.Unsubscribe<MessagingServiceAlert> ("alert");
-MessagingService.Current.Unsubscribe ("message");
-```
-
-Send Messages:
-```csharp
-MessagingService.Current.SendMessage("question", new MessagingServiceQuestion
-{
-    Title = "Question",
-    Question = "Is this awesome?",
-    Positive = "YES",
-    Negative = "NO"
-});
-
-MessagingService.Current.SendMessage("alert", new MessagingServiceAlert
-{
-    Title = "Alert",
-    Message = "This is is coming form messaging service",
-    Cancel = "OK",
-});
-
-MessagingService.Current.SendMessage("message");
-```
 
 ### License
 
