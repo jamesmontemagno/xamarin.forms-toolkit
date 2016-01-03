@@ -17,7 +17,6 @@ If you want to add something please create an issue and mark it with [Proposed] 
 ## What is in it?
 
 ### Controls
-Namespace: **FormsToolkit.Controls**
 
 * EntryLine: Custom iOS entry control that looks like a line
 * ListViewGrouped: It is a ListView, but on iOS it is of UITableViewStyle.Grouped, which looks very nice!
@@ -29,14 +28,12 @@ Namespace: **FormsToolkit.Behaviors**
 * EmptyValidator: Checks to see if a string is empty or null
 
 ### Converters
-Namespace: **FormsToolkit.Converters**
 
 * BooleanToObject: Takes a bool and coverter is to any object you need all templated up
 * HexToColor: Takes in a string hex and coverts to a Xamarin.Forms color
 * InvertedBoolean: Inverts that bool!
 
 ### Services
-Namespace: **FormsToolkit.Services**
 
 * [MessagingService](https://github.com/jamesmontemagno/xamarin.forms-toolkit/wiki/Services#messagingservice): Simplifies the Messaging Center API into having a singleton subscriber so you never have to worry. Also, adds a common question and alert class that can be used across your project.
 
