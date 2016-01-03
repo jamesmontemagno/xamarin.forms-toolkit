@@ -21,7 +21,7 @@ namespace FormsToolkit
         /// <param name="message">Message.</param>
         /// <param name="callback">Callback.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        void Subscribe<T>(string message, Action<IMessagingService, T> callback);
+        void Subscribe<TArgs>(string message, Action<IMessagingService, TArgs> callback);
 
         /// <summary>
         /// Sends the message.
@@ -35,7 +35,7 @@ namespace FormsToolkit
         /// <param name="message">Message.</param>
         /// <param name="args">Arguments.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        void SendMessage<T>(string message, T args);
+        void SendMessage<TArgs>(string message, TArgs args);
 
         /// <summary>
         /// Unsubscribe the specified message.
@@ -49,7 +49,7 @@ namespace FormsToolkit
         /// <param name="message">Message.</param>
         /// <param name="args">Arguments.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        void Unsubscribe<T> (string message, T args);
+        void Unsubscribe<TArgs> (string message);
     }
 }
 

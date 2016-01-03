@@ -23,8 +23,8 @@ namespace FormsToolkit
         /// <param name="message">Message.</param>
         /// <param name="callback">Callback.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        public void Subscribe<T>(string message, Action<IMessagingService, T> callback) =>
-            MessagingCenter.Subscribe<MessagingService, T>(this, message, callback);
+        public void Subscribe<TArgs>(string message, Action<IMessagingService, TArgs> callback) =>
+            MessagingCenter.Subscribe<MessagingService, TArgs>(this, message, callback);
 
 
         /// <summary>
@@ -41,8 +41,8 @@ namespace FormsToolkit
         /// <param name="message">Message.</param>
         /// <param name="args">Arguments.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        public void SendMessage<T>(string message, T args) =>
-            MessagingCenter.Send<MessagingService, T>(this, message, args);
+        public void SendMessage<TArgs>(string message, TArgs args) =>
+        MessagingCenter.Send<MessagingService, TArgs>(this, message, args);
 
 
         /// <summary>
@@ -59,8 +59,16 @@ namespace FormsToolkit
         /// <param name="message">Message.</param>
         /// <param name="args">Arguments.</param>
         /// <typeparam name="T">The 1st type parameter.</typeparam>
-        public void Unsubscribe<T> (string message, T args) =>
-            MessagingCenter.Unsubscribe<MessagingService, T>(this, message);
+        public void Unsubscribe<TArgs> (string message) =>
+            MessagingCenter.Unsubscribe<MessagingService, TArgs>(this, message);
+
+
+        static MessagingService instance = null;
+
+        /// <summary>
+        /// Gets the instance of the Messaging Service
+        /// </summary>
+        public static MessagingService Current => (instance ?? (instance = new MessagingService()));
 
     }
 
