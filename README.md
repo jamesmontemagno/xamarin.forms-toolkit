@@ -1,6 +1,8 @@
 # Xamarin.Forms-Toolkit
 Toolkit for Xamarin.Forms (Controls, Behaviors, and Converters)!
 
+Build status: [![Build status](https://ci.appveyor.com/api/projects/status/87pdyrxft9kthibg/branch/master?svg=true)](https://ci.appveyor.com/project/JamesMontemagno/xamarin-forms-toolkit/branch/master)
+
 ## What is this?
 I created this repo for reference of a nice collection of controls, behaviors, and converters that could come in nifty for you when creating Xamarin.Forms applications. I plan on adding to this over time and eventually consuming it in a bunch of my applications and hope you will to.
 
