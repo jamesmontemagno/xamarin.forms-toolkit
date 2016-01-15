@@ -7,7 +7,7 @@ namespace FormsToolkit
     /// <summary>
     /// Inverted boolen converter.
     /// </summary>
-    public class InvertedBoolenConverter : IValueConverter
+    public class InvertedBooleanConverter : IValueConverter
     {
         /// <summary>
         /// Init this instance.
