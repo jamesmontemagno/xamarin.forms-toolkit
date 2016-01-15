@@ -82,11 +82,13 @@ namespace FormsToolkit
         /// </summary>
         /// <value>The title.</value>
         public string Title {get;set;}
+
         /// <summary>
         /// Gets or sets the question.
         /// </summary>
         /// <value>The question.</value>
         public string Question { get; set; }
+
         /// <summary>
         /// Gets or sets the positive button text.
         /// </summary>
@@ -98,6 +100,12 @@ namespace FormsToolkit
         /// </summary>
         /// <value>The negative.</value>
         public string Negative { get; set; }
+
+        /// <summary>
+        /// Gets or sets the positive action, that action that is to be executed if the Positive choice is selected.
+        /// </summary>
+        /// <value>The positive action.</value>
+        public Action PositiveAction { get; set; }
     }
 
     /// <summary>
@@ -110,6 +118,7 @@ namespace FormsToolkit
         /// </summary>
         /// <value>The title.</value>
         public string Title {get;set;}
+
         /// <summary>
         /// Gets or sets the message.
         /// </summary>
