@@ -22,7 +22,7 @@ namespace FormsToolkit.iOS
             NavigationPageNoLineRenderer.Init();
             BooleanToObjectConverter<string>.Init();
             HexToColorConverter.Init();
-            InvertedBoolenConverter.Init();
+            InvertedBooleanConverter.Init();
         }
     }
 }
