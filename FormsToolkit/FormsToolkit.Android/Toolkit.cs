@@ -16,7 +16,7 @@ namespace FormsToolkit.Droid
             EmptyValidatorBehavior.Init();
             BooleanToObjectConverter<string>.Init();
             HexToColorConverter.Init();
-            InvertedBoolenConverter.Init();
+            InvertedBooleanConverter.Init();
         }
     }
 }
