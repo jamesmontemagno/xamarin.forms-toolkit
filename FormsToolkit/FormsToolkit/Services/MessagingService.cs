@@ -102,10 +102,10 @@ namespace FormsToolkit
         public string Negative { get; set; }
 
         /// <summary>
-        /// Gets or sets the positive action, that action that is to be executed if the Positive choice is selected.
+        /// Gets or sets the OnCompleted Action&lt;bool&gt;.
         /// </summary>
-        /// <value>The positive action.</value>
-        public Action PositiveAction { get; set; }
+        /// <value>The OnCompleted Action&lt;bool&gt;.</value>
+        public Action<bool> OnCompleted { get; set; }
     }
 
     /// <summary>
@@ -130,6 +130,12 @@ namespace FormsToolkit
         /// </summary>
         /// <value><c>true</c> if this instance cancel; otherwise, <c>false</c>.</value>
         public string Cancel { get; set; }
+
+        /// <summary>
+        /// Gets or sets the OnCompleted Action.
+        /// </summary>
+        /// <value>The OnCompleted Action.</value>
+        public Action OnCompleted { get; set; }
     }
 }
 
