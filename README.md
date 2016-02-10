@@ -3,6 +3,8 @@ Toolkit for Xamarin.Forms (Controls, Behaviors, and Converters)!
 
 Build status: [![Build status](https://ci.appveyor.com/api/projects/status/87pdyrxft9kthibg/branch/master?svg=true)](https://ci.appveyor.com/project/JamesMontemagno/xamarin-forms-toolkit/branch/master)
 
+Built with C# 6 features, you must be running VS 2015 or Xamarin Studio to compile. **NuGets of course work everywhere!**
+
 ## What is this?
 I created this repo for reference of a nice collection of controls, behaviors, and converters that could come in nifty for you when creating Xamarin.Forms applications. I plan on adding to this over time and eventually consuming it in a bunch of my applications and hope you will to.
 
