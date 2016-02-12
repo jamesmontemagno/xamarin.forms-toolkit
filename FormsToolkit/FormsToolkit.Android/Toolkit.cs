@@ -17,6 +17,13 @@ namespace FormsToolkit.Droid
             BooleanToObjectConverter<string>.Init();
             HexToColorConverter.Init();
             InvertedBooleanConverter.Init();
+            UpperTextConverter.Init();
+            LowerTextConverter.Init();
+            HasDataConverter.Init();
+            MessagingService.Init();
+            MessagingServiceAlert.Init();
+            MessagingServiceQuestion.Init();
+            MessagingServiceChoice.Init();
         }
     }
 }

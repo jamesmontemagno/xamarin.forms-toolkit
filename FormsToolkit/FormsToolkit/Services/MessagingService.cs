@@ -9,6 +9,14 @@ namespace FormsToolkit
     public class MessagingService : IMessagingService
     {
         /// <summary>
+        /// Init this instance.
+        /// </summary>
+        public static void Init()
+        {
+            var time = DateTime.UtcNow;
+        }
+
+        /// <summary>
         /// Subscribe the specified message and callback.
         /// </summary>
         /// <param name="message">Message.</param>
@@ -72,70 +80,6 @@ namespace FormsToolkit
 
     }
 
-    /// <summary>
-    /// Messaging service question.
-    /// </summary>
-    public class MessagingServiceQuestion
-    {
-        /// <summary>
-        /// Gets or sets the title.
-        /// </summary>
-        /// <value>The title.</value>
-        public string Title {get;set;}
-
-        /// <summary>
-        /// Gets or sets the question.
-        /// </summary>
-        /// <value>The question.</value>
-        public string Question { get; set; }
-
-        /// <summary>
-        /// Gets or sets the positive button text.
-        /// </summary>
-        /// <value>The positive.</value>
-        public string Positive { get; set; }
-
-        /// <summary>
-        /// Gets or sets the negative button text
-        /// </summary>
-        /// <value>The negative.</value>
-        public string Negative { get; set; }
-
-        /// <summary>
-        /// Gets or sets the OnCompleted Action&lt;bool&gt;.
-        /// </summary>
-        /// <value>The OnCompleted Action&lt;bool&gt;.</value>
-        public Action<bool> OnCompleted { get; set; }
-    }
-
-    /// <summary>
-    /// Messaging service alert.
-    /// </summary>
-    public class MessagingServiceAlert
-    {
-        /// <summary>
-        /// Gets or sets the title.
-        /// </summary>
-        /// <value>The title.</value>
-        public string Title {get;set;}
-
-        /// <summary>
-        /// Gets or sets the message.
-        /// </summary>
-        /// <value>The message.</value>
-        public string Message { get; set; }
-
-        /// <summary>
-        /// Gets or sets a value indicating whether this instance cancel/OK text.
-        /// </summary>
-        /// <value><c>true</c> if this instance cancel; otherwise, <c>false</c>.</value>
-        public string Cancel { get; set; }
-
-        /// <summary>
-        /// Gets or sets the OnCompleted Action.
-        /// </summary>
-        /// <value>The OnCompleted Action.</value>
-        public Action OnCompleted { get; set; }
-    }
+   
 }
 
