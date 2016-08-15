@@ -1,5 +1,5 @@
 ﻿using System;
-
+using FormsToolkit;
 using Xamarin.Forms;
 
 namespace ToolkitTests
@@ -15,6 +15,14 @@ namespace ToolkitTests
                 Command = new Command(()=>MainPage.Navigation.PushAsync(new MessagingServicePage()))
             };
 
+			var line = new EntryLine
+			{
+				Placeholder = "This nifty place for entering text!",
+				HorizontalTextAlignment = TextAlignment.Center,
+				HorizontalOptions = LayoutOptions.FillAndExpand,
+				Text = "",
+				BorderColor = Color.FromHex("#ECECEC")
+			};
 
             // The root page of your application
             MainPage = new NavigationPage(new ContentPage
@@ -22,9 +30,11 @@ namespace ToolkitTests
                 Content = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.Center,
+					Padding = new Thickness(32,32,32,32),
                     Children =
                     {
-                        messagingCenter
+                        messagingCenter,
+						line
                     }
                 }
             });
