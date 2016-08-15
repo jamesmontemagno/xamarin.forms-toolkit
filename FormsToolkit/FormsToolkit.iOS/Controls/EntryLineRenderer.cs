@@ -68,7 +68,7 @@ namespace FormsToolkit.iOS
         {
             var borderLayer = new CALayer ();
             borderLayer.MasksToBounds = true;
-            borderLayer.Frame = new CoreGraphics.CGRect (0f, Frame.Height / 2, Frame.Width, 1f);
+            borderLayer.Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, UIScreen.MainScreen.Bounds.Width, 1f);
             borderLayer.BorderColor = view.BorderColor.ToCGColor ();
             borderLayer.BorderWidth = 1.0f;
 
