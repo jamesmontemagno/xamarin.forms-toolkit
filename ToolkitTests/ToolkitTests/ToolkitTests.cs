@@ -30,9 +30,11 @@ namespace ToolkitTests
                 Content = new StackLayout
                 {
                     VerticalOptions = LayoutOptions.Center,
+					Padding = new Thickness(32,32,32,32),
                     Children =
                     {
-                        messagingCenter
+                        messagingCenter,
+						line
                     }
                 }
             });
