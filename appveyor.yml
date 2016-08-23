@@ -1,0 +1,28 @@
+version: 1.1.{build}
+image: Previous Visual Studio 2015
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfoGlobal.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+nuget:
+  account_feed: true
+  project_feed: true
+xamarin:
+  email: james.montemagno+plugins@xamarin.com
+  password:
+    secure: IvizasKLwEZxdWKxLqa5cQ==
+  android: true
+  ios: true
+build_script:
+- cmd: >-
+    nuget restore .\FormsToolkit.sln
+
+
+    powershell .\bootstrapper.ps1 -Target Default -Verbosity diagnostic
+
+    powershell .\bootstrapper.ps1 -Target NuGetPack -Verbosity diagnostic
+artifacts:
+- path: '*.nupkg'
+  name: NuGet
