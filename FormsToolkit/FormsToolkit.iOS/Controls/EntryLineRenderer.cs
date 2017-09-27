@@ -36,11 +36,11 @@ namespace FormsToolkit.iOS
             if (Control != null) {
                 Control.BorderStyle = UITextBorderStyle.None;
 
-                var view = (Element as EntryLine);
-                if (view != null) {
-                    DrawBorder (view);
-                    SetFontSize (view);
-                    SetPlaceholderTextColor (view);
+                if (Element is EntryLine view)
+                {
+                    DrawBorder(view);
+                    SetFontSize(view);
+                    SetPlaceholderTextColor(view);
                 }
             }
         }
@@ -68,11 +68,12 @@ namespace FormsToolkit.iOS
         {
             var borderLayer = new CALayer ();
             borderLayer.MasksToBounds = true;
-            borderLayer.Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, UIScreen.MainScreen.Bounds.Width, 1f);
+            borderLayer.Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, Frame.Width, 1f);
             borderLayer.BorderColor = view.BorderColor.ToCGColor ();
             borderLayer.BorderWidth = 1.0f;
 
             Control.Layer.AddSublayer (borderLayer);
+            Control.Layer.MasksToBounds = true;
             Control.BorderStyle = UITextBorderStyle.None;
         }
 
