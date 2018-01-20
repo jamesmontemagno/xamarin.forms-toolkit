@@ -15,30 +15,53 @@
        <summary>Toolkit for Xamarin.Forms (Controls, Behaviors, and Converters)!</summary>
        <tags>xamarin.forms, toolkit, converters, behaviors, controls, xamarin, pcl, xam.pcl, plugin, plugin for xamarin.forms, windows phone, winphone, wp8, android, xamarin.forms, ios</tags>
        <dependencies>
-         <dependency id="Xamarin.Forms" version="2.0.0.6490" />
+         <group targetFramework="net">
+         </group>
+         <group targetFramework="win">
+         </group>
+         <group targetFramework="wp">
+         </group>
+         <group targetFramework="wpa">
+         </group>
+         <group targetFramework="netstandard1.0">
+           <dependency id="NETStandard.Library" version="1.6.1" />
+           <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+         </group>
+         <group targetFramework="MonoAndroid10">
+           <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+         </group>
+         <group targetFramework="Xamarin.iOS10">
+           <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+         </group>
+         <group targetFramework="Xamarin.Mac20">
+         </group>
+         <group targetFramework="portable-net45+win+wpa81+wp80">
+           <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+         </group>
+         <group targetFramework="uap">
+           <dependency id="Xamarin.Forms" version="2.5.0.121934"/>
+         </group>
+         <group targetFramework="dotnet">
+         </group>
+         <group targetFramework="xamarintvos">
+         </group>
+         <group targetFramework="xamarinwatchos">
+         </group>
        </dependencies>
        <releaseNotes>
-       [1.1.0]
-       -Added Messaging Service (abstraction over Messaging Center)
        </releaseNotes>
    </metadata>
    <files>
      <file src="readme.txt" target="readme.txt" />
      <!--Core-->
-     <file src="FormsToolkit/FormsToolkit/bin/Release/FormsToolkit.dll" target="lib/portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/FormsToolkit.dll" />
-     <file src="FormsToolkit/FormsToolkit/bin/Release/FormsToolkit.xml" target="lib/portable-net45+wp8+win8+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/FormsToolkit.xml" />
-    
+     <file src="FormsToolkit/FormsToolkit/bin/Release/netstandard1.0/FormsToolkit.*" target="lib/netstandard1.0" />
+
      <!--Xamarin.Android-->
-     <file src="FormsToolkit/FormsToolkit.Android/bin/Release/FormsToolkit.Android.dll" target="lib/MonoAndroid10/FormsToolkit.Android.dll" />
-     <file src="FormsToolkit/FormsToolkit.Android/bin/Release/FormsToolkit.Android.xml" target="lib/MonoAndroid10/FormsToolkit.Android.xml" />
-     <file src="FormsToolkit/FormsToolkit/bin/Release/FormsToolkit.dll" target="lib/MonoAndroid10/FormsToolkit.dll" />
-     <file src="FormsToolkit/FormsToolkit/bin/Release/FormsToolkit.xml" target="lib/MonoAndroid10/FormsToolkit.xml" />
+     <file src="FormsToolkit/FormsToolkit.Android/bin/Release/FormsToolkit.*" target="lib/MonoAndroid10" />
+ 
 
      <!--Xamarin.iOSUnified-->
-     <file src="FormsToolkit/FormsToolkit.iOS/bin/iPhone/Release/FormsToolkit.iOS.dll" target="lib/Xamarin.iOS10/FormsToolkit.iOS.dll" />
-     <file src="FormsToolkit/FormsToolkit.iOS/bin/iPhone/Release/FormsToolkit.iOS.xml" target="lib/Xamarin.iOS10/FormsToolkit.iOS.xml" />
-     <file src="FormsToolkit/FormsToolkit/bin/Release/FormsToolkit.dll" target="lib/Xamarin.iOS10/FormsToolkit.dll" />
-     <file src="FormsToolkit/FormsToolkit/bin/Release/FormsToolkit.xml" target="lib/Xamarin.iOS10/FormsToolkit.xml" />
+     <file src="FormsToolkit/FormsToolkit.iOS/bin/iPhone/Release/FormsToolkit.*" target="lib/Xamarin.iOS10" />
 
    </files>
 </package>

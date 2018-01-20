@@ -9,7 +9,7 @@ using FormsToolkit;
 using FormsToolkit.iOS;
 
 //Via: https://gist.github.com/davidtavarez/e3580c98357edd89de6f
-[assembly: ExportRenderer (typeof(EntryLine), typeof(EntryLineRenderer))]
+[assembly: ExportRenderer(typeof(EntryLine), typeof(EntryLineRenderer))]
 namespace FormsToolkit.iOS
 {
     /// <summary>
@@ -29,18 +29,19 @@ namespace FormsToolkit.iOS
         /// Raises the element changed event.
         /// </summary>
         /// <param name="e">E.</param>
-        protected override void OnElementChanged (ElementChangedEventArgs<Entry> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
-            base.OnElementChanged (e);
+            base.OnElementChanged(e);
 
-            if (Control != null) {
+            if (Control != null)
+            {
                 Control.BorderStyle = UITextBorderStyle.None;
 
-                var view = (Element as EntryLine);
-                if (view != null) {
-                    DrawBorder (view);
-                    SetFontSize (view);
-                    SetPlaceholderTextColor (view);
+                if (Element is EntryLine view)
+                {
+                    DrawBorder(view);
+                    SetFontSize(view);
+                    SetPlaceholderTextColor(view);
                 }
             }
         }
@@ -50,48 +51,49 @@ namespace FormsToolkit.iOS
         /// </summary>
         /// <param name="sender">Sender.</param>
         /// <param name="e">E.</param>
-        protected override void OnElementPropertyChanged (object sender, PropertyChangedEventArgs e)
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            base.OnElementPropertyChanged (sender, e);
+            base.OnElementPropertyChanged(sender, e);
 
             var view = (EntryLine)Element;
 
-            if (e.PropertyName.Equals (view.BorderColor))
-                DrawBorder (view);
-            if (e.PropertyName.Equals (view.FontSize))
-                SetFontSize (view);
-            if (e.PropertyName.Equals (view.PlaceholderColor))
-                SetPlaceholderTextColor (view);
+            if (e.PropertyName.Equals(view.BorderColor))
+                DrawBorder(view);
+            if (e.PropertyName.Equals(view.FontSize))
+                SetFontSize(view);
+            if (e.PropertyName.Equals(view.PlaceholderColor))
+                SetPlaceholderTextColor(view);
         }
 
-        void DrawBorder (EntryLine view)
+        void DrawBorder(EntryLine view)
         {
-            var borderLayer = new CALayer ();
+            var borderLayer = new CALayer();
             borderLayer.MasksToBounds = true;
-            borderLayer.Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, UIScreen.MainScreen.Bounds.Width, 1f);
-            borderLayer.BorderColor = view.BorderColor.ToCGColor ();
+            borderLayer.Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, Frame.Width, 1f);
+            borderLayer.BorderColor = view.BorderColor.ToCGColor();
             borderLayer.BorderWidth = 1.0f;
 
-            Control.Layer.AddSublayer (borderLayer);
+            Control.Layer.AddSublayer(borderLayer);
+            Control.Layer.MasksToBounds = true;
             Control.BorderStyle = UITextBorderStyle.None;
         }
 
-        void SetFontSize (EntryLine view)
+        void SetFontSize(EntryLine view)
         {
             if (view.FontSize != Font.Default.FontSize)
-                Control.Font = UIFont.SystemFontOfSize ((System.nfloat)view.FontSize);
+                Control.Font = UIFont.SystemFontOfSize((System.nfloat)view.FontSize);
             else if (view.FontSize == Font.Default.FontSize)
-                Control.Font = UIFont.SystemFontOfSize (17f);
+                Control.Font = UIFont.SystemFontOfSize(17f);
         }
 
-        void SetPlaceholderTextColor (EntryLine view)
+        void SetPlaceholderTextColor(EntryLine view)
         {
-            if (string.IsNullOrEmpty (view.Placeholder) == false && view.PlaceholderColor != Color.Default) {
-                var placeholderString = new NSAttributedString (view.Placeholder, 
-                    new UIStringAttributes { ForegroundColor = view.PlaceholderColor.ToUIColor () });
+            if (string.IsNullOrEmpty(view.Placeholder) == false && view.PlaceholderColor != Color.Default)
+            {
+                var placeholderString = new NSAttributedString(view.Placeholder,
+                    new UIStringAttributes { ForegroundColor = view.PlaceholderColor.ToUIColor() });
                 Control.AttributedPlaceholder = placeholderString;
             }
         }
     }
 }
-

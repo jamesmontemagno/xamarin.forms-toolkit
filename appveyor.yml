@@ -1,28 +1,21 @@
-version: 1.1.{build}
-image: Previous Visual Studio 2015
+version: 2.0.0.{build}-beta
+image: Visual Studio 2017
+configuration: Release
 assembly_info:
   patch: true
-  file: '**\AssemblyInfoGlobal.*'
+  file: '**\AssemblyInfo.*'
   assembly_version: '{version}'
   assembly_file_version: '{version}'
   assembly_informational_version: '{version}'
-nuget:
-  account_feed: true
-  project_feed: true
-xamarin:
-  email: james.montemagno+plugins@xamarin.com
-  password:
-    secure: IvizasKLwEZxdWKxLqa5cQ==
-  android: true
-  ios: true
+install: 
+  - echo y | "C:\Program Files (x86)\Android\android-sdk\tools\android.bat" update sdk -u -a -t tools
+  - echo y | "C:\Program Files (x86)\Android\android-sdk\tools\android.bat" update sdk -u -a -t platform-tools
+  - echo y | "C:\Program Files (x86)\Android\android-sdk\tools\android.bat" update sdk -u -a -t build-tools-25.0.6
+  - echo y | "C:\Program Files (x86)\Android\android-sdk\tools\android.bat" update sdk -u -a -t android-25
+  - echo y | "C:\Program Files (x86)\Android\android-sdk\tools\android.bat" update sdk -u -a -t android-15
 build_script:
 - cmd: >-
-    nuget restore .\FormsToolkit.sln
-
-
-    powershell .\bootstrapper.ps1 -Target Default -Verbosity diagnostic
-
-    powershell .\bootstrapper.ps1 -Target NuGetPack -Verbosity diagnostic
+    powershell .\build.ps1 -Target Default -Verbosity diagnostic
 artifacts:
-- path: '*.nupkg'
+- path: ./Build/nuget/*.nupkg
   name: NuGet
