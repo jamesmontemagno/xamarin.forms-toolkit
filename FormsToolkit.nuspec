@@ -54,14 +54,14 @@
    <files>
      <file src="readme.txt" target="readme.txt" />
      <!--Core-->
-     <file src="FormsToolkit/FormsToolkit/bin/Release/netstandard1.0/FormsToolkit.*" target="lib/netstandard1.0" />
+     <file src="FormsToolkit\FormsToolkit\bin\Release\netstandard1.0\FormsToolkit.*" target="lib\netstandard1.0" />
 
      <!--Xamarin.Android-->
-     <file src="FormsToolkit/FormsToolkit.Android/bin/Release/FormsToolkit.*" target="lib/MonoAndroid10" />
+     <file src="FormsToolkit\FormsToolkit.Android\bin\Release\FormsToolkit.*" target="lib\MonoAndroid10" />
  
 
      <!--Xamarin.iOSUnified-->
-     <file src="FormsToolkit/FormsToolkit.iOS/bin/iPhone/Release/FormsToolkit.*" target="lib/Xamarin.iOS10" />
+     <file src="FormsToolkit\FormsToolkit.iOS\bin\iPhone\Release\FormsToolkit.*" target="lib\Xamarin.iOS10" />
 
    </files>
 </package>
