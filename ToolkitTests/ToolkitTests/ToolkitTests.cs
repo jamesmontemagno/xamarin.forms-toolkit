@@ -21,6 +21,7 @@ namespace ToolkitTests
 				HorizontalTextAlignment = TextAlignment.Center,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				Text = "",
+                FontSize = 10,
 				BorderColor = Color.Red
 			};
 
