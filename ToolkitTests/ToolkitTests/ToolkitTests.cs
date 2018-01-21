@@ -21,7 +21,7 @@ namespace ToolkitTests
 				HorizontalTextAlignment = TextAlignment.Center,
 				HorizontalOptions = LayoutOptions.FillAndExpand,
 				Text = "",
-				BorderColor = Color.FromHex("#ECECEC")
+				BorderColor = Color.Red
 			};
 
             // The root page of your application

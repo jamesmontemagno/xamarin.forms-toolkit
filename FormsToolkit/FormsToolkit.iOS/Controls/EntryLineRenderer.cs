@@ -39,9 +39,9 @@ namespace FormsToolkit.iOS
 
                 if (Element is EntryLine view)
                 {
-                    DrawBorder(view);
                     SetFontSize(view);
                     SetPlaceholderTextColor(view);
+                    DrawBorder(view);
                 }
             }
         }
@@ -57,21 +57,23 @@ namespace FormsToolkit.iOS
 
             var view = (EntryLine)Element;
 
-            if (e.PropertyName.Equals(view.BorderColor))
+            if (e.PropertyName == nameof(view.BorderColor))
                 DrawBorder(view);
-            if (e.PropertyName.Equals(view.FontSize))
+            if (e.PropertyName == nameof(view.FontSize))
                 SetFontSize(view);
-            if (e.PropertyName.Equals(view.PlaceholderColor))
+            if (e.PropertyName == nameof(view.PlaceholderColor))
                 SetPlaceholderTextColor(view);
         }
 
         void DrawBorder(EntryLine view)
         {
-            var borderLayer = new CALayer();
-            borderLayer.MasksToBounds = true;
-            borderLayer.Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, Frame.Width, 1f);
-            borderLayer.BorderColor = view.BorderColor.ToCGColor();
-            borderLayer.BorderWidth = 1.0f;
+            var borderLayer = new CALayer
+            {
+                MasksToBounds = true,
+                Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, Frame.Width, 1f),
+                BorderColor = view.BorderColor.ToCGColor(),
+                BorderWidth = 1.0f
+            };
 
             Control.Layer.AddSublayer(borderLayer);
             Control.Layer.MasksToBounds = true;
