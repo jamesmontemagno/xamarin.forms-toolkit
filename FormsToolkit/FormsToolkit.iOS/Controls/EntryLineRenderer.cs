@@ -7,6 +7,7 @@ using CoreAnimation;
 using Foundation;
 using FormsToolkit;
 using FormsToolkit.iOS;
+using CoreGraphics;
 
 //Via: https://gist.github.com/davidtavarez/e3580c98357edd89de6f
 [assembly: ExportRenderer(typeof(EntryLine), typeof(EntryLineRenderer))]
@@ -65,19 +66,24 @@ namespace FormsToolkit.iOS
                 SetPlaceholderTextColor(view);
         }
 
+        public override void Draw(CGRect rect)
+        {
+            base.Draw(rect);
+            var start = new CGPoint(rect.GetMinX(), rect.GetMaxY());
+            var end = new CGPoint(rect.GetMaxX(), rect.GetMaxY());
+
+            var path = new UIBezierPath();
+            path.MoveTo(start);
+            path.AddLineTo(end);
+            path.LineWidth = 2.0f;
+
+            ((EntryLine)Element).BorderColor.ToUIColor().SetStroke();
+            path.Stroke();
+        }
+
         void DrawBorder(EntryLine view)
         {
-            var borderLayer = new CALayer
-            {
-                MasksToBounds = true,
-                Frame = new CoreGraphics.CGRect(0f, Frame.Height / 2, Frame.Width, 1f),
-                BorderColor = view.BorderColor.ToCGColor(),
-                BorderWidth = 1.0f
-            };
-
-            Control.Layer.AddSublayer(borderLayer);
-            Control.Layer.MasksToBounds = true;
-            Control.BorderStyle = UITextBorderStyle.None;
+            SetNeedsDisplay();
         }
 
         void SetFontSize(EntryLine view)
